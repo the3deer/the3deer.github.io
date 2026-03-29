@@ -3,278 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android 3D Model Viewer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>The 3Deer Portfolio</title>
     <style>
-        :root {
-            --primary-color: #3fb950;
-            --bg-color: #0d1117;
-            --sidebar-bg: #161b22;
-            --text-color: #c9d1d9;
-            --header-color: #f0f6fc;
-            --border-color: #30363d;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            display: flex;
-        }
-
-        /* Sidebar Navigation */
-        nav {
-            width: 280px;
-            background-color: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            height: 100vh;
-            position: fixed;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        nav h2 {
-            font-size: 1.2rem;
-            color: var(--header-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-bottom: 10px;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-            display: block;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        nav ul li i {
-            width: 20px;
-            margin-right: 10px;
-            text-align: center;
-        }
-
-        /* Main Content */
-        main {
-            margin-left: 320px;
-            padding: 40px;
-            max-width: 900px;
-            flex-grow: 1;
-        }
-
-        h1, h2, h3 {
-            color: var(--header-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        h1 { border-bottom: 2px solid var(--primary-color); }
-
-        code {
-            background-color: #1b1f23;
-            padding: 0.2em 0.4em;
-            border-radius: 6px;
-            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-        }
-
-        pre {
-            background-color: #1b1f23;
-            padding: 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            border: 1px solid var(--border-color);
-        }
-
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .feature-item {
-            background: var(--sidebar-bg);
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        .screenshot-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .screenshot-gallery img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s;
-        }
-
-        .screenshot-gallery img:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            nav { position: relative; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); padding: 15px; }
-            main { margin-left: 0; padding: 20px; }
-            nav ul { display: flex; flex-wrap: wrap; gap: 10px; }
-            nav ul li { margin-bottom: 0; }
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background: #1a1a1a; color: #e0e0e0; line-height: 1.6; }
+        header { background: #111111; color: white; padding: 1rem 2rem; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+        header .brand { font-size: 1.5rem; font-weight: bold; color: #e0e0e0; text-decoration: none; }
+        header .brand span { color: #4CAF50; }
+        header .nav-links { display: flex; align-items: center; }
+        header .nav-links a { color: #e0e0e0; text-decoration: none; margin-left: 1.5rem; font-size: 1rem; transition: color 0.2s; }
+        header .nav-links a:hover { color: #4CAF50; }
+        .hero { text-align: center; padding: 6rem 2rem 4rem; }
+        .hero h1 { color: #ffffff; font-size: 3em; margin: 0 0 1rem 0; }
+        .hero h1 span { color: #4CAF50; }
+        .hero p { font-size: 1.25em; color: #b0b0b0; max-width: 650px; margin: 0 auto; }
+        .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .card { background: #2c2c2c; border: 1px solid #333; border-radius: 12px; padding: 2rem; text-decoration: none; color: #e0e0e0; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); border-color: #64b5f6; }
+        .card h2 { margin-top: 0; color: #ffffff; font-size: 1.5em; margin-bottom: 0.5rem; }
+        .card p { color: #b0b0b0; flex-grow: 1; margin-bottom: 1.5rem; }
+        .card-link { color: #64b5f6; font-weight: bold; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
-
-<nav>
-    <h2>Project Index</h2>
-    <ul>
-        <li><a href="#intro"><i class="fas fa-cube"></i> Introduction</a></li>
-        <li><a href="#news"><i class="fas fa-newspaper"></i> Latest News</a></li>
-        <li><a href="#demo"><i class="fas fa-play-circle"></i> Live Demo</a></li>
-        <li><a href="#download"><i class="fas fa-download"></i> Download</a></li>
-        <li><a href="#features"><i class="fas fa-list-check"></i> Key Features</a></li>
-        <li><a href="#try-it"><i class="fas fa-rocket"></i> Getting Started</a></li>
-        <li><a href="#docs"><i class="fas fa-book"></i> Documentation</a></li>
-        <li><a href="#compilation"><i class="fas fa-code"></i> Developer Guide</a></li>
-        <li><a href="#screenshots"><i class="fas fa-image"></i> Screenshots</a></li>
-        <li><a href="#credits"><i class="fas fa-users"></i> Acknowledgments</a></li>
-        <li><a href="#disclaimer"><i class="fas fa-exclamation-triangle"></i> Disclaimer</a></li>
-    </ul>
-</nav>
-
-<main>
-    <section id="intro">
-        <h1>Android 3D Model Viewer</h1>
-        <p>A powerful OpenGL ES 2.0/3.0 engine for Android. This application allows you to load and visualize 3D models in various formats including <strong>Wavefront OBJ, STL, DAE, GLTF, and FBX</strong>. The project is open-source and serves as a learning resource for Android 3D graphics.</p>
-    </section>
-
-    <section id="news">
-        <h2>Latest News (10/04/2026)</h2>
-        <p>Big updates powered by Gemini AI:</p>
-        <ul>
-            <li>✨ <strong>UI Revamp:</strong> Completely rewritten interface with Navigation Drawer and Fragments.</li>
-            <li>🎥 <strong>Scene Control:</strong> Enhanced selection for Camera, Scene, and Animations.</li>
-            <li>⚙️ <strong>Preferences:</strong> New settings panel for engine configuration.</li>
-            <li>📦 <strong>FBX Support:</strong> Basic support for Filmbox files added.</li>
-            <li>🤖 <strong>AI Powered:</strong> Parsers for DAE & GLTF optimized with AI.</li>
-        </ul>
-    </section>
-
-    <section id="demo">
-        <h2>Demo</h2>
-        <p>Watch the engine in action (Legacy video):</p>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe src="https://www.youtube.com/embed/PV92DKohXXk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section id="download">
-        <h2>Download & Install</h2>
-        <p>Get the latest version from the following sources:</p>
-        <div class="badge-container">
-            <a href="https://f-droid.org/en/packages/org.andresoviedo.dddmodel2/" target="_blank"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="50"></a>
-            <a href="https://play.google.com/store/apps/details?id=org.andresoviedo.dddmodel2" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="50"></a>
-        </div>
-    </section>
-
-    <section id="features">
-        <h2>Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-item"><strong>Format Support:</strong> OBJ, STL, DAE, GLTF, FBX</div>
-            <div class="feature-item"><strong>Rendering:</strong> Vertex, Normals, Colors, Textures</div>
-            <div class="feature-item"><strong>Advanced:</strong> Skinning, Shadows, Normal Mapping</div>
-            <div class="feature-item"><strong>VR Mode:</strong> Anaglyph and Stereo views</div>
-            <div class="feature-item"><strong>Debug Tools:</strong> Wireframe, Skeleton, Bounding Box</div>
-        </div>
-    </section>
-
-    <section id="try-it">
-        <h2>Getting Started</h2>
-        <p>Once installed, you can load models from your device. It is recommended to pack all model resources (textures, materials) into a <code>.zip</code> file for easier loading.</p>
-    </section>
-
-    <section id="docs">
-        <h2>Documentation</h2>
-        <p>Technical documentation is available in the <a href="./doc/README.md" style="color: var(--primary-color);">/doc</a> directory of the repository.</p>
-    </section>
-
-    <section id="compilation">
-        <h2>Developer Guide</h2>
-        <p>Build the project using Gradle and install via ADB:</p>
-        <pre><code># Clone the repository
-git clone --recursive https://github.com/the3deer/android-3D-model-viewer.git
-cd android-3D-model-viewer
-
-# Build Debug APK
-./gradlew assembleDebug
-
-# Install to connected device
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-
-# Launch
-adb shell am start -n org.andresoviedo.dddmodel2/org.the3deer.android.viewer.ui.MainActivity</code></pre>
-    </section>
-
-    <section id="screenshots">
-        <h2>Screenshots Gallery</h2>
-        <div class="screenshot-gallery">
-            <img src="screenshots/menu.png" alt="Main Menu">
-            <img src="screenshots/screenshot2.png" alt="3D View">
-            <img src="screenshots/screenshot_gltf.png" alt="GLTF Rendering">
-            <img src="screenshots/cowboy.gif" alt="Skeletal Animation">
-            <img src="screenshots/stormtrooper.gif" alt="Mesh Loading">
-            <img src="screenshots/screenshot6-3d.png" alt="3D Stereoscopic">
-        </div>
-    </section>
-
-    <section id="credits">
-        <h2>Acknowledgments</h2>
-        <ul>
-            <li><strong>ThinMatrix:</strong> For the excellent animation engine tutorials.</li>
-            <li><strong>Khronos Group:</strong> For the GLTF specifications.</li>
-            <li><strong>Open Source Community:</strong> For various parsers and assets used in the project.</li>
-            <li><strong>Gemini AI:</strong> For assistance in engine refactoring and UI modernization.</li>
-        </ul>
-    </section>
-
-    <section id="disclaimer">
-        <h2>Disclaimer</h2>
-        <p>This is an educational project and a work in progress. High-poly models may experience performance issues on older devices. Please report any bugs via GitHub Issues.</p>
-    </section>
-
-    <footer>
-        <p style="text-align: center; margin-top: 60px; padding: 20px; border-top: 1px solid var(--border-color); opacity: 0.6; font-size: 0.8rem;">
-            Project maintained by <strong>The 3Deer</strong>. Licensed under the MIT License.
-        </p>
-    </footer>
-</main>
-
+    <header>
+        <a href="index.html" class="brand">The <span>3Deer</span></a>
+        <nav class="nav-links">
+            <a href="android-game-isomodel.html">Android Game Isomodel</a>
+            <a href="android-model-engine.html">Android Model Engine</a>
+            <a href="android-model-viewer.html">Android Model Viewer</a>
+            <a href="https://github.com/the3deer/the3deer.github.io" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub" style="color: #e0e0e0; line-height: 0;">
+                <svg viewBox="0 0 16 16" version="1.1" width="28" height="28" fill="currentColor">
+                    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21-.15.46-.55.38A8.013 8.013 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                </svg>
+            </a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>The <span>3Deer</span> Portfolio</h1>
+<p>Showcasing modern Android 3D graphics, an open-source rendering engine, and powerful model viewer applications.</p>
+    </div>
+    <div class="projects-container">
+        <a href="android-game-isomodel.html" class="card">
+    <h2>Android Game IsoModel</h2>
+    <p>A 3D game designed to train your brain neurons. Keep young.
+[i] This is a Work In Progress...</p>
+    <div class="card-link">View Documentation →</div>
+</a>
+<a href="android-model-engine.html" class="card">
+    <h2>Android Model Engine</h2>
+    <p>A standalone 3D rendering engine library for Android implementing a Scene Graph architecture and OpenGL ES 2.0/3.0 support.</p>
+    <div class="card-link">View Documentation →</div>
+</a>
+<a href="android-model-viewer.html" class="card">
+    <h2>Android 3D Model Viewer</h2>
+    <p>A feature-rich application to load, inspect, and visualize 3D models (OBJ, STL, DAE, GLTF, FBX) using our custom 3D engine.</p>
+    <div class="card-link">View Documentation →</div>
+</a>
+    </div>
 </body>
 </html>

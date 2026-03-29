@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Game IsoModel - The 3Deer</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --primary-text-color: #e0e0e0;
+            --secondary-text-color: #b0b0b0;
+            --header-bg: #111111;
+            --border-color: #333;
+            --accent-green: #4CAF50;
+            --accent-blue: #64b5f6;
+            --code-bg: #2c2c2c;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--primary-text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- Header --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-text-color);
+            text-decoration: none;
+        }
+
+        .header .logo .green {
+            color: var(--accent-green);
+        }
+
+        .header .top-menu { display: flex; align-items: center; }
+        .header .top-menu a {
+            color: var(--primary-text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .header .top-menu a:hover {
+            color: var(--accent-green);
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            padding-right: 2rem;
+            position: sticky;
+            top: 2rem;
+            align-self: flex-start;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            color: var(--accent-green);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul a {
+            color: var(--secondary-text-color);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .sidebar ul a:hover {
+            color: var(--primary-text-color);
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            flex-grow: 1;
+            min-width: 0; /* Prevents flexbox overflow */
+        }
+
+        .main-content h1, .main-content h2, .main-content h3, .main-content h4 {
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .main-content h1 { font-size: 2.5rem; }
+        .main-content h2 { font-size: 2rem; }
+        .main-content h3 { font-size: 1.5rem; }
+
+        .main-content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .main-content a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content p {
+            color: var(--secondary-text-color);
+        }
+
+        .main-content strong {
+            color: var(--primary-text-color);
+        }
+
+        .main-content pre {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .main-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+        }
+        
+        .main-content :not(pre) > code {
+            background-color: var(--code-bg);
+            padding: .2em .4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 6px;
+        }
+
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: static;
+                width: 100%;
+                border-right: none;
+                padding-right: 0;
+                margin-bottom: 2rem;
+                height: auto;
+                overflow-y: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">The <span class="green">3Deer</span></a>
+        <nav class="top-menu">
+            <a href="android-game-isomodel.html">Android Game Isomodel</a>
+            <a href="android-model-engine.html">Android Model Engine</a>
+            <a href="android-model-viewer.html">Android Model Viewer</a>
+            <a href="https://github.com/the3deer/android-3D-isogame" class="github-corner" aria-label="View source on GitHub">
+                <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+                    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.3 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+                </svg>
+            </a>
+<style>
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+  @keyframes octocat-wave {
+    0%, 100% { transform: rotate(0); }
+    20%, 60% { transform: rotate(-25deg); }
+    40%, 80% { transform: rotate(10deg); }
+  }
+</style>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>On this page</h3>
+<div class="toc">
+<ul>
+<li><a href="#android-game-isomodel">Android Game IsoModel</a></li>
+<li><a href="#development-status">Development Status</a></li>
+</ul>
+</div>
+
+        </aside>
+        <main class="main-content">
+            <h1 id="android-game-isomodel">Android Game IsoModel</h1>
+<p><strong><a href="https://github.com/the3deer/android-3D-isogame">Source Code on GitHub</a></strong></p>
+<p>A 3D game designed to train your brain neurons. Keep young.</p>
+<h1 id="development-status">Development Status</h1>
+<p>This is a work in progress</p>
+        </main>
+    </div>
+</body>
+</html>
